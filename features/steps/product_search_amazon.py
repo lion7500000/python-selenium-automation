@@ -5,7 +5,10 @@ from time import sleep
 
 #amazon = 'https://www.amazon.com'
 SEARCH_SUBMIT1 = (By.XPATH, "//a[@id='nav-orders']/span[@class='nav-line-2']")
-RESULTS_FOUND_MESSAGE1 = (By.XPATH, "//h1[@class='a-spacing-small']")
+SEARCH_SUBMIT2 = (By.CSS_SELECTOR,"div.nav-search-submit")
+customer_service = (By.CSS_SELECTOR,"a[href*='nav_cs_customerservice']")
+card_icon = (By.CSS_SELECTOR,"a#nav-cart")
+SEARCH_INPUT = (By.CSS_SELECTOR,"input#twotabsearchtextbox")
 
 
 @given('Open Amazon page')
@@ -14,12 +17,29 @@ def open_amazon(context):
     context.driver.get('https://www.amazon.com')
 
 
-@then('Click on search item')
+@when('Click on search item')
 def click_search_icon(context):
     context.driver.find_element(*SEARCH_SUBMIT1).click()
     sleep(1)
 
-@then('Product results for {search_word} are it')
-def verify_found_results_text(context, search_word):
-    results_msg = context.driver.find_element(*RESULTS_FOUND_MESSAGE1).text
-    assert search_word in results_msg, "Expected word '{}' in message, but got '{}'".format(search_word, results_msg)
+@when('Click on Customer Service')
+def click_search_icon(context):
+    context.driver.find_element(*customer_service).click()
+    sleep(1)
+
+@when('Click on cart icon')
+def click_search_icon(context):
+    context.driver.find_element(*card_icon).click()
+    sleep(1)
+
+@when('Input {search_word} into amazon_search field')
+def input_search(context, search_word):
+    search = context.driver.find_element(*SEARCH_INPUT)
+    search.clear()
+    search.send_keys(search_word)
+    sleep(4)
+
+@when('Click on search icon_amazom')
+def click_search_icon(context):
+    context.driver.find_element(*SEARCH_SUBMIT2).click()
+    sleep(1)
