@@ -13,35 +13,35 @@ item_search = (By.CSS_SELECTOR,"img[src='https://m.media-amazon.com/images/I/81v
 check_item = (By.CSS_SELECTOR, "span#a-autoid-0-announce")
 
 
-@then('click_on  item')
+@then('Click on  item')
 def click_search_icon(context):
     context.driver.find_element(*item_search).click()
     sleep(1)
 
 
-@then('add to cart')
+@then('Add to cart')
 def click_search_icon(context):
     context.driver.find_element(*add_cart).click()
     sleep(1)
     try:
         context.driver.find_element( *continue_icon ).click()
-        sleep( 1 )
+        sleep(1)
     except WebDriverException:
         print( 'No continue button' )
 
 
-@then('click_on  cart')
+@then('Click on cart icon' )
 def click_card_icon(context):
     try:
-        context.driver.find_element( *cart ).click()
+        context.driver.find_element( *cart1 ).click()
         sleep(4)
     except WebDriverException:
-        context.driver.find_element( *cart1 ).click()
+        context.driver.find_element( *cart ).click()
         sleep (4)
 #    context.driver.find_element(*cart2).click()
 #    sleep(1)
 
-@then('check {search_word} item on card')
+@then('Verify shopping cart has {search_word} item')
 def verify_found_results_text(context, search_word):
     results_msg = context.driver.find_element(*check_item).text
     assert search_word in results_msg, "Expected word '{}' in message, but got '{}'".format(search_word, results_msg)

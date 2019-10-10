@@ -12,13 +12,13 @@ def input_search(context, search_word):
     search = context.driver.find_element( *link_find )
     search.clear()
     search.send_keys( search_word )
-    sleep( 4 )
+    sleep(4)
 
 
 @then( 'Click on search icon' )
 def click_search_icon(context):
     context.driver.find_element( *search_click ).click()
-    sleep( 1 )
+    sleep(1)
 
 
 @then( 'Product results {search_word} are shown' )

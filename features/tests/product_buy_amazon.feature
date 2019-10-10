@@ -7,7 +7,7 @@ Feature: Test Scenarios for functionality
     Given Open Amazon page
     When Input iphone 11 pro into amazon_search field
     And Click on search icon_amazom
-    Then click_on  item
-    Then add to cart
-    Then click_on  cart
-    Then check 1 item on card
+    Then Click on  item
+    Then Add to cart
+    Then Click on cart icon
+    Then Verify shopping cart has 1 item
