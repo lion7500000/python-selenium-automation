@@ -1,4 +1,6 @@
+import allure
 from selenium.webdriver.common.by import By
+from allure_commons.types import AttachmentType
 from behave import then
 from time import sleep
 
@@ -7,7 +9,10 @@ search_click = (By.XPATH, "//div[@class='a-column a-span2 a-span-last']/span[@id
 word_found = (By.XPATH, "//div[@class='help-content']/h1")
 
 
-@then( 'Input {search_word} into search field' )
+#@then( 'Input {search_word} into search field' )
+#@allure.feature('Input word into search field')
+#@allure.story('search iphone 11 pro')
+@then('Input {search_word} into search field')
 def input_search(context, search_word):
     search = context.driver.find_element( *link_find )
     search.clear()

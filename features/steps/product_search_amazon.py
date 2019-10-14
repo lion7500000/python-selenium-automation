@@ -13,9 +13,14 @@ SEARCH_INPUT = (By.CSS_SELECTOR,"input#twotabsearchtextbox")
 
 @given('Open Amazon page')
 def open_amazon(context):
-    context.driver.maximize_window()
+    #context.driver.maximize_window()
     context.driver.get('https://www.amazon.com')
 
+
+@given('Open Amazonprime page')
+def open_amazon_prime(context):
+    context.driver.get('https://www.amazon.com/amazonprime')
+    sleep(3)
 
 @when('Click on search item')
 def click_search_icon(context):

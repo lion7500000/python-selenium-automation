@@ -5,7 +5,7 @@ from time import sleep
 
 
 add_cart = (By.CSS_SELECTOR, "input#add-to-cart-button")
-cart1 = (By.CSS_SELECTOR, "span#attach-sidesheet-view-cart-button-announce")
+cart1 = (By.CSS_SELECTOR, "form[action='/gp/cart/view.html/ref=attachSidesheet']")
 #cart2 = (By.XPATH, "//span[@id='attach-sidesheet-view-cart-button-announce']")
 cart = (By.CSS_SELECTOR, "a#hlb-view-cart-announce")
 continue_icon = (By.CSS_SELECTOR, "span#a-autoid-21")
@@ -38,7 +38,7 @@ def click_card_icon(context):
     except WebDriverException:
         context.driver.find_element( *cart ).click()
         sleep (4)
-#    context.driver.find_element(*cart2).click()
+#    context.driver.find_element(*cart1).click()
 #    sleep(1)
 
 @then('Verify shopping cart has {search_word} item')
