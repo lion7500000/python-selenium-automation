@@ -2,7 +2,7 @@
 Feature: Test Scenarios for functionality cart icon
   # Enter feature description here
 
-  Scenario: open cart icon and verifies that  is empty.
+  Scenario: open amazon page and verifies that cart is present
 
     Given Open Amazon page
     When Click on cart icon

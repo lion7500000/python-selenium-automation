@@ -1,4 +1,6 @@
 from selenium import webdriver
+#import allure
+#from allure_commons.types import AttachmentType
 
 
 def browser_init(context):

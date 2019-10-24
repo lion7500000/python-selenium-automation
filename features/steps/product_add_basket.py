@@ -1,4 +1,6 @@
 from selenium.common.exceptions import WebDriverException
+import allure
+from allure_commons.types import AttachmentType
 from selenium.webdriver.common.by import By
 from behave import given, then
 from time import sleep
@@ -12,9 +14,14 @@ continue_icon = (By.CSS_SELECTOR, "span#a-autoid-21")
 item_search = (By.CSS_SELECTOR,"img[src='https://m.media-amazon.com/images/I/81vZCv9kA0L._AC_UL320_ML3_.jpg']")
 check_item = (By.CSS_SELECTOR, "span#a-autoid-0-announce")
 
-
+@allure.feature('Verify shopping cart')
+@allure.story('Check items in shopping cart')
+#blocker, critical, normal, miner, trivial
+@allure.severity('critical')
 @then('Click on  item')
 def click_search_icon(context):
+    with allure.step('Click on  item and screenshot'):
+        allure.attach(context.driver.get_screenshot_as_png(), name='Screenshot', attachment_type=AttachmentType.PNG)
     context.driver.find_element(*item_search).click()
     sleep(1)
 
