@@ -5,4 +5,4 @@ Feature: Test Scenarios for functionality cart icon
   Scenario: open amazon page and verifies that text and name is present.
     # Enter steps here
     Given Open Amazon wholefood page
-    Then verify Regular in products
+    Then Each product has a Regular price
