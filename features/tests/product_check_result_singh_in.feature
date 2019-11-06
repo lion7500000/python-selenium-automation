@@ -2,7 +2,8 @@
 Feature: Test Scenarios for Search functionality
 
 
-  Scenario: User can search for a product
+  Scenario: Logged out user sees Sign in page when clicking Orders
     Given Open Amazon page
-    When Click on search item
+    #When Click on search item
+    When Click Amazon Orders link
     Then Product results for Sign-In are open

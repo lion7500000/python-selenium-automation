@@ -9,7 +9,7 @@ SEARCH_SUBMIT2 = (By.CSS_SELECTOR,"div.nav-search-submit")
 customer_service = (By.CSS_SELECTOR,"a[href*='nav_cs_customerservice']")
 card_icon = (By.CSS_SELECTOR,"a#nav-cart")
 SEARCH_INPUT = (By.CSS_SELECTOR,"input#twotabsearchtextbox")
-
+hamburger_menu =(By.ID,'nav-hamburger-menu')
 
 @given('Open Amazon page')
 def open_amazon(context):
@@ -32,10 +32,10 @@ def open_amazon_page(context):
 def open_amazon_page(context):
     context.driver.get('https://www.amazon.com/wholefoodsdeals')
 
-@when('Click on search item')
-def click_search_icon(context):
-    context.driver.find_element(*SEARCH_SUBMIT1).click()
-    #sleep(1)
+#@when('Click on search item')
+#def click_search_icon(context):
+#    context.driver.find_element(*SEARCH_SUBMIT1).click()
+#    #sleep(1)
 
 @when('Click on Customer Service')
 def click_search_icon(context):
@@ -44,8 +44,9 @@ def click_search_icon(context):
 
 @when('Click on cart icon')
 def click_search_icon(context):
-    context.driver.find_element(*card_icon).click()
-    #sleep(1)
+    #context.driver.find_element(*card_icon).click()
+    #sleep(5)
+    context.app.main_page.click_card_icon()
 
 @when('Input {search_word} into amazon_search field')
 def input_search(context, search_word):
@@ -58,3 +59,14 @@ def input_search(context, search_word):
 def click_search_icon(context):
     context.driver.find_element(*SEARCH_SUBMIT2).click()
     #sleep(1)
+
+@when('Click Amazon Orders link')
+def click_amazon_order_icon(context):
+    context.app.main_page.click_order_icon()
+
+@when('Click on hamburger menu')
+def click_amazon_hamburger_menu(context):
+    #context.driver.find_element(*hamburger_menu).click()
+    context.app.main_page.click_hamburger_menu()
+    sleep(15)
+

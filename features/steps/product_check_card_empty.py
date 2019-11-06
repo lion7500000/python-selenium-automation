@@ -6,5 +6,7 @@ word_found= (By.CSS_SELECTOR,'h1.sc-empty-cart-header')
 
 @then ('verifies that {search_word} is present')
 def verify_found_results_text(context, search_word):
-    result_card = context.driver.find_element( *word_found ).text
-    assert search_word in result_card
+   # result_card = context.driver.find_element( *word_found ).text
+   # assert search_word in result_card
+   context.app.search_results_page.verify_card_empty(search_word)
+
