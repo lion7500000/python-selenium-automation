@@ -8,6 +8,7 @@ music_menu_item_results = (By.CSS_SELECTOR, "ul.hmenu-visible a:not(.hmenu-back-
 def click_music_menu(context):
     context.app.menu_page.click_amazon_music_menu()
 
+
 @then ('{amound} menu items are present')
 def verify_amound_of_items(context,amound):
     context.app.search_results_page.verify_amound_items(amound)

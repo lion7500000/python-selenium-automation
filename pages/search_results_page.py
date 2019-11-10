@@ -13,5 +13,5 @@ class SearchResults(Page):
     def verify_card_empty(self, expected_text):
         self.verify_text(expected_text, *self.card_empty)
 
-    def verify_amound_items(self,expected_items):
+    def verify_amound_items(self,expected_items:int):
         self.verify_len_items(expected_items,*self.music_menu_item_results)
