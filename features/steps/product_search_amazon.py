@@ -14,7 +14,8 @@ hamburger_menu =(By.ID,'nav-hamburger-menu')
 @given('Open Amazon page')
 def open_amazon(context):
     #context.driver.maximize_window()
-    context.driver.get('https://www.amazon.com')
+    #context.driver.get('https://www.amazon.com')
+    context.app.main_page.open_page()
 
 
 @given('Open Amazonprime page')
@@ -68,5 +69,5 @@ def click_amazon_order_icon(context):
 def click_amazon_hamburger_menu(context):
     #context.driver.find_element(*hamburger_menu).click()
     context.app.main_page.click_hamburger_menu()
-    sleep(15)
+    #sleep(15)
 

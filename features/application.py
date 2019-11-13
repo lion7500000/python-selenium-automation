@@ -1,6 +1,7 @@
 from pages.main_page import MainPage
 from pages.search_results_page import SearchResults
 from pages.menu_page import MenuPage
+from pages.product_page import Product
 
 class Application:
 
@@ -10,3 +11,4 @@ class Application:
         self.main_page = MainPage(self.driver)
         self.search_results_page = SearchResults(self.driver)
         self.menu_page = MenuPage(self.driver)
+        self.product_page = Product(self.driver)

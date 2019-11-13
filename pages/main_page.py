@@ -7,10 +7,13 @@ class MainPage(Page):
     card_icon = (By.CSS_SELECTOR, "a#nav-cart")
     hamburger_menu =(By.ID, 'nav-hamburger-menu')
 
+    def open_page(self,url=''):
+        self.driver.get(self.base_url+url)
+
     def click_order_icon (self):
         self.click(*self.order_icon)
 
-    def click_card_icon(self):
+    def click_cart_icon(self):
         self.click(*self.card_icon)
 
     def click_hamburger_menu(self):

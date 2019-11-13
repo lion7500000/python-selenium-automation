@@ -1,5 +1,5 @@
 # Created by Andrey at 11/4/2019
-Feature: #Enter feature name here
+Feature: est Scenarios for functionality
   # Enter feature description here
 
   Scenario: Amazon Music has 6 menu items
