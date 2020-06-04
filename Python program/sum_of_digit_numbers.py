@@ -1,5 +1,6 @@
 import random
 from random import randint
+#from random import random
 
 
 dig = int(input(f'Enter the number of numbers:'))

@@ -25,3 +25,4 @@ def verify_select_departmen(context,departmen):
 @then ('{departmen} department is selected in departmen')
 def verify_select_departmen(context,departmen):
     context.app.menu_page.verify_select_departmen(departmen)
+

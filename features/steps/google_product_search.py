@@ -12,14 +12,14 @@ RESULTS = (By.XPATH,"//div[@class='g']")
 @given('Open Google page')
 def open_google(context):
     context.driver.get('https://www.google.com/')
-    sleep(2)
+    #sleep(2)
 
 @when('Input {search_word} into search field')
 def input_search(context, search_word):
     search = context.driver.find_element(*SEARCH_INPUT)
     search.clear()
     search.send_keys(search_word)
-    sleep(4)
+    #sleep(4)
 
 
 @when('Click on search icon')

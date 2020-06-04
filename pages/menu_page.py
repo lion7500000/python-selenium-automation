@@ -5,17 +5,17 @@ from time import sleep
 
 class MenuPage(Page):
 
-    music_menu = (By.XPATH, "//ul[contains(@class,'hmenu-visible')]//div[contains(text(),'Amazon Music')]")
+    #music_menu = (By.XPATH, "//ul[contains(@class,'hmenu-visible')]//div[contains(text(),'Amazon Music')]")
     #music_menu_item_results = (By.CSS_SELECTOR, "ul.hmenu-visible a:not(.hmenu-back-button)")
     select_amazon_books_department = (By.CSS_SELECTOR,"select#searchDropdownBox")
     select_departmen_span = (By.CSS_SELECTOR,"span.nav-search-label")
     search_icon = (By.CSS_SELECTOR,"input#twotabsearchtextbox")
 
 
-    def click_amazon_music_menu (self):
-        #self.click(*self.music_menu)
-        self.wait_for_element_click(*self.music_menu)
-        sleep(1)
+    #def click_amazon_music_menu (self):
+    #    #self.click(*self.music_menu)
+    #    self.wait_for_element_click(*self.music_menu)
+    #    sleep(1)
 
     def select_books_department(self):
         select_department_element = self.find_element(*self.select_amazon_books_department)

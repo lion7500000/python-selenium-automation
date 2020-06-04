@@ -23,3 +23,11 @@ Feature: Test for product page
     Given Open Amazon pruduct B074TBCSC8
     When hovers over Sales and Deals
     Then verifies that user sees the deals
+
+
+  Scenario: Opens amazone product , hovers over card_btn, then verifies that is menu.
+
+    # Enter steps here
+    Given Open Amazon pruduct B074TBCSC8
+    When hovers over to add_to_card
+    Then verifies that user sees menu

@@ -24,10 +24,9 @@ def open_amazon_prime(context):
     #sleep(3)
 
 
-@given('Open Amazon clothing page')
-def open_amazon_page(context):
-    context.driver.get('https://www.amazon.com/gp/product/B07BKFFFXL/?th=1')
-
+#@given('Open Amazon clothing page {product_id}')
+#def open_amazon_page(context):
+#    #context.driver.get('https://www.amazon.com/gp/product/B07BKFFFXL/?th=1')
 
 @given ('Open Amazon wholefood page')
 def open_amazon_page(context):
@@ -44,10 +43,10 @@ def click_search_icon(context):
     #sleep(1)
 
 @when('Click on cart icon')
-def click_search_icon(context):
+def click_card_icon(context):
     #context.driver.find_element(*card_icon).click()
     #sleep(5)
-    context.app.main_page.click_card_icon()
+    context.app.main_page.click_cart_icon()
 
 @when('Input {search_word} into amazon_search field')
 def input_search(context, search_word):
@@ -71,3 +70,11 @@ def click_amazon_hamburger_menu(context):
     context.app.main_page.click_hamburger_menu()
     #sleep(15)
 
+@when ('Search the product {word}')
+def search_product(context,word):
+    context.app.main_page.search_product(word)
+    context.app.main_page.click_search_product()
+
+@then ('Search product for {word} is shown')
+def verify_product_amazon(context, word):
+    context.app.search_results_page.verify_product_amazon(word)

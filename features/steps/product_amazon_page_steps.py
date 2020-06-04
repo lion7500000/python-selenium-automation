@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from behave import then, when
+from behave import given,then, when
 @given ('Open Amazon pruduct {product_id}')
 def open_product(context,product_id):
     context.app.product_page.open_product(product_id)

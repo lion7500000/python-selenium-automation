@@ -7,11 +7,11 @@ from time import sleep
 
 
 add_cart = (By.CSS_SELECTOR, "input#add-to-cart-button")
-cart1 = (By.CSS_SELECTOR, "form[action='/gp/cart/view.html/ref=attachSidesheet']")
+cart1 = (By.ID, "nav-cart")
 #cart2 = (By.XPATH, "//span[@id='attach-sidesheet-view-cart-button-announce']")
-cart = (By.CSS_SELECTOR, "a#hlb-view-cart-announce")
-continue_icon = (By.CSS_SELECTOR, "span#a-autoid-21")
-item_search = (By.CSS_SELECTOR,"img[src='https://m.media-amazon.com/images/I/81vZCv9kA0L._AC_UL320_ML3_.jpg']")
+cart = (By.CSS_SELECTOR, "form#attach-view-cart-button-form ")
+continue_icon = (By.CSS_SELECTOR, "span.a-button-inner button#attachSiNoCoverage-announce")
+item_search = (By.XPATH,"//img[contains(@alt,'Simple Mobile - Apple iPhone 11 Pro (64GB) - Midnight Green')]")
 check_item = (By.CSS_SELECTOR, "span#a-autoid-0-announce")
 
 @allure.feature('Verify shopping cart')
@@ -29,22 +29,24 @@ def click_search_icon(context):
 @then('Add to cart')
 def click_search_icon(context):
     context.driver.find_element(*add_cart).click()
-    sleep(1)
+    #sleep(1)
     try:
         context.driver.find_element( *continue_icon ).click()
-        sleep(1)
+        #sleep(1)
     except WebDriverException:
         print( 'No continue button' )
 
 
-@then('Click on cart icon' )
+@then('Click on cart icon btn' )
 def click_card_icon(context):
     try:
         context.driver.find_element( *cart1 ).click()
-        sleep(4)
+        #sleep(4)
     except WebDriverException:
         context.driver.find_element( *cart ).click()
-        sleep (4)
+        #sleep (4)
+
+
 #    context.driver.find_element(*cart1).click()
 #    sleep(1)
 

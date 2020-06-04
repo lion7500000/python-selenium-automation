@@ -9,5 +9,5 @@ Feature: Test Scenarios for functionality
     And Click on search icon_amazom
     Then Click on  item
     Then Add to cart
-    Then Click on cart icon
+    Then Click on cart icon btn
     Then Verify shopping cart has 1 item

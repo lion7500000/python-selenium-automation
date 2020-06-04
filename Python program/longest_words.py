@@ -4,11 +4,11 @@ list_str = str.split()
 # index max word = 0
 max_word = 0
 
-for i in range(1,len(list_str)):
-    if len(list_str[max_word])<len(list_str[i]):
-        max_word = i
-
-print (list_str[max_word])
+# for i in range(1,len(list_str)):
+#     if len(list_str[max_word])<len(list_str[i]):
+#         max_word = i
+#
+# print (list_str[max_word])
 
 #alternative
 def max (str):

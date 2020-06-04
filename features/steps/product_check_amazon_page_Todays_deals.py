@@ -3,8 +3,8 @@ from behave import given, when, then
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
-deals_under_25 = (By.CSS_SELECTOR, "a[aria-label*='deals under $25']")
-todays_deals = (By.CSS_SELECTOR, "h1 div.gbh1-bold")
+deals_under_25 = (By.XPATH, "//span[@class='as-title-block-right']/a[@target='_blank']")
+todays_deals = (By.CSS_SELECTOR, "h1")
 add_to_card = (By.XPATH,"//span[@class='a-button-inner']/button[@type='button' and contains(text(),'Add to Cart')]")
 card = (By.CSS_SELECTOR,"span.nav-cart-count")
 
@@ -12,11 +12,11 @@ card = (By.CSS_SELECTOR,"span.nav-cart-count")
 def store_current_windows(context):
     context.original_window= context.driver.current_window_handle
     context.old_windows= context.driver.window_handles
-    #print('\noriginal_window\n', context.original_window)
-    #print('\nold_windows\n',context.old_windows)
+    print('\noriginal_window\n', context.original_window)
+    print('\nold_windows\n',context.old_windows)
 
-@when('Click to open Deals under $25')
-def click_to_open_deala_under_25(context):
+@when('Click to Deals')
+def click_to_open_deal_under_25(context):
     context.driver.find_element(*deals_under_25).click()
 
 @when('Switch to the newly opened window')
@@ -25,12 +25,12 @@ def switch_to_new_window(context):
     context.driver.wait.until(EC.new_window_is_opened)
 
     current_window= context.driver.window_handles
-    #print('\ncurrent_window\n',current_window)
+    print('\ncurrent_window\n',current_window)
 
     new_window = current_window
     for old_window in context.old_windows:
         new_window.remove(old_window)
-    #print('\nnew_window\n',new_window)
+    print('\nnew_window\n',new_window)
 
     context.driver.switch_to_window(new_window[0])
 

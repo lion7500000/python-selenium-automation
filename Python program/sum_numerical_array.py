@@ -11,4 +11,5 @@ for i in range(N):
 print (a)
 for i in a:
     sum_arr.append(str(i))
+    print (sum_arr)
 print(sum(map(int, list(''.join(sum_arr)))))

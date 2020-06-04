@@ -5,7 +5,8 @@ while n<=0:
 def fibonacci(n):
     fib1 = fib2 = 1
     if n < 2:
-        quit()
+        return fib1
+        #quit()
 
     print( fib1, end='->')
     print( fib2,end='->')
